@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Currency Value</title>
+  <link rel="stylesheet" href="Page2.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Currency Value (All Rates for Selected Date)</h2>
+    <form id="value-form">
+      <label for="base">Base Currency</label>
+      <select id="base" required></select>
+
+      <label for="date">Select Date</label>
+      <input type="date" id="date" max="" required />
+
+      <button type="submit">Get Rates</button>
+    </form>
+    <div id="result"></div>
+    <div id="error"></div>
+  </div>
+
+  <script src="Model3Value.js"></script>
+</body>
+</html>

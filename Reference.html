@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration + APIs</title>
+  <link rel="stylesheet" href="page1Style.css"> <!-- If you have a separate CSS -->
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background-image: url('bg.jpeg'); /* Your background image */
+      background-size: cover;
+      background-position: center;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      gap: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .side-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card, form {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(5px);
+      width: 250px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      color: white;
+    }
+
+    form {
+      width: 320px;
+    }
+
+    fieldset {
+      border: 2px solid #4CAF50;
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    legend {
+      text-align: center;
+      font-size: 24px;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    input[type="submit"], input[type="reset"], button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover, input[type="reset"]:hover, button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay"></div>
+
+  <div class="container">
+    <!-- Left Side APIs -->
+    <div class="side-cards">
+      <div class="card" id="weatherCard">
+        <h2>Weather</h2>
+        <p id="weatherData">Loading...</p>
+        <button onclick="fetchWeather()">Refresh</button>
+      </div>
+      <div class="card" id="adviceCard">
+        <h2>Advice</h2>
+        <p id="adviceData">Loading...</p>
+        <button onclick="fetchAdvice()">Refresh</button>
+      </div>
+    </div>
+
+    <!-- Registration Form Center -->
+    <div class="form-section">
+      <form id="regform" onsubmit="handleSubmit(event)">
+        <legend>Registration Form</legend>
+        <fieldset>
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+        
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+        
+          <div class="form-group gender-group">
+            <label for="gender">Gender:</label>
+            <div class="inline-options">
+              <label><input type="radio" name="gender" value="male" required> Male</label>
+              <label><input type="radio" name="gender" value="female" required> Female</label>
+            </div>
+          </div>
+        
+          <div class="form-group hobbies-group">
+            <label for="hobbies">Hobbies:</label>
+            <div class="inline-options">
+              <label><input type="checkbox" name="hobbies" value="sports"> Sports</label>
+              <label><input type="checkbox" name="hobbies" value="music"> Music</label>
+              <label><input type="checkbox" name="hobbies" value="pubg"> PUBG</label>
+            </div>
+          </div>
+        
+          <div class="form-group">
+            <label for="country">Country:</label>
+            <select name="country" id="country">
+              <option value="usa">USA</option>
+              <option value="uk">UK</option>
+              <option value="india">India</option>
+            </select>
+          </div>
+        
+          <div class="form-group">
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear">
+          </div>
+        </fieldset>
+        
+        <div id="output" style="margin-top: 20px;"></div>
+      </form>
+    </div>
+
+    <!-- Right Side APIs -->
+    <div class="side-cards">
+      <div class="card" id="newsCard">
+        <h2>News</h2>
+        <ul id="newsData">Loading...</ul>
+        <button onclick="fetchNews()">Refresh</button>
+      </div>
+      <div class="card" id="iplCard">
+        <h2>IPL Score</h2>
+        <p id="iplData">Loading...</p>
+        <button onclick="fetchIpl()">Refresh</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript File -->
+  <script src="Page1logic.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

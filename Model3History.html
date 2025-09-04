@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Historical Currency Rates</title>
+  <link rel="stylesheet" href="Page2.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Historical Currency Conversion</h2>
+
+    <form id="history-form">
+      <div class="form-group">
+        <label for="from">From Currency</label>
+        <select id="from" required></select>
+      </div>
+
+      <div class="form-group">
+        <label for="to">To Currency</label>
+        <select id="to" required></select>
+      </div>
+
+      <div class="form-group">
+        <label for="start">Start Date</label>
+        <input type="date" id="start" required />
+      </div>
+
+      <div class="form-group">
+        <label for="end">End Date</label>
+        <input type="date" id="end" required />
+      </div>
+
+      <button type="submit">Get Historical Rates</button>
+    </form>
+
+    <div id="error" class="error"></div>
+    <div id="result"></div>
+  </div>
+
+  <script src="Model3History.js"></script>
+</body>
+</html>
