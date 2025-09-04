@@ -1,0 +1,12 @@
+/Backend/node_modules
+/Frontend/node_modules
+/.env
+.DS_Store
+.vscode
+/coverage
+.idea
+npm-debug.log
+yarn-error.log
+lerna-debug.log
+lerna-debug.log.*
+node_modules/*
